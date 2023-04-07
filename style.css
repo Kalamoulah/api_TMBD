@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --black: #222;
+    /* --light_black:rgba(255, 255, 255, 0.212); */
+    --light_black: #3b3a3a;
+    --black_opa:#ffffff20
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);    
+}
+
+.container_search{
+    height: 100px;
+    background-color: #3b3a3a;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+input{
+    height: 50px;
+    width: 250px;
+    border: none;   
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 30px;
+    color: #fff;
+    background-color: var(--black_opa);    
+}
+
+input:focus{
+    outline: 0;
+}
+
+/* for safari */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+
+input::placeholder{
+    color: #fff;
+}
+
+main{
+    width: 100%;
+    height: auto;
+    
+}
+
+.cards{
+    width: 100%;
+    height: auto;
+    /* background-color: lightblue; */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+
+}
+
+.movis{
+    width: 400px;
+    height: 550px;
+    margin-top: 3%;    
+    /* background-color: #C4c4c4; */
+    position: relative;
+    overflow: hidden;
+}
+
+/* .skeleton{
+    width: 100%;
+    height: 100%;
+    background-color: #c4c4c4;
+    animation: skeleton_anim 0.8s infinite alternate;
+} */
+
+.img_box{
+    width: 100%;
+    height: 85%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform .4s ease-in; 
+    background-color: lightblue;          
+}
+
+
+
+.overview_box{
+    width: 100%;
+    height: 80%;
+    max-height: 100%;
+    background-color: #fff;
+   border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    position: absolute;
+    bottom:0;
+    right: 0;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.6s ease-in-out;
+}
+
+.over{
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.desc{
+    max-width: 90%;
+    text-align: justify;
+    font-size: 1.3rem;
+}
+.movis:hover .overview_box{
+   transform: translateX(0%);
+}
+
+.movis:hover .img_box{  
+    transform:scale(1.1);
+ }
+
+.info_box{
+    height: 15%;
+    background-color: var(--light_black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.movie_title{
+    font-size:  1.5rem;
+    width: 70%;      
+    color: #fff;   
+}
+
+/* .skeleton_info{
+    width: 50PX;
+    height: 50px;
+    background-color: #c4c4c4;
+    margin-top: -10px;
+    animation: skeleton_anim 0.8s infinite alternate;
+}
+
+.skeleton_title{
+    width: 200PX;
+    height: 50px;
+    background-color: #c4c4c4;
+    animation: skeleton_anim 0.8s infinite alternate;
+} */
+
+.note_info{
+    background-color: var(--black_opa);
+    width: 50px;
+    height: 50px;
+    max-width: 90px;  
+    padding: 10px;
+    border-radius: 10px;      
+   
+}
+
+
+
+/* @keyframes skeleton_anim {
+    to{
+        opacity: 0.8;
+    }
+} */
+
+
+.note{
+   font-size: 1.3rem;
+   text-align: center;
+   color: #90ee90;
+}
+
+.view{
+    width: 100%;
+    height: 200px;
+}
+
+
+@media screen and (max-width:1659px) {
+    .container_search{
+        justify-content: center;
+        
+        
+    }
+
+    input{
+        width: 400px;
+        padding-left:10px ;
+        appearance: none;
+    }
+
+    .movis{
+        width: 300px;
+        height: 450px;
+        margin-top: 10%;
+    }
+
+    .overview_box{
+        height: 90%;
+    }
+
+    .over{
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .desc{
+        max-width: 90%;
+        text-align: start;
+        font-size: 1.1rem;
+    }
+
+    .movie_title{
+        font-size:  1rem;
+        width: 70%;   
+        color: #fff;
+    }
+}
+
+
+@media screen and (max-width:320px) {
+    .container_search{
+        display: flex;
+       padding: 20px;           
+        
+    }
+}
